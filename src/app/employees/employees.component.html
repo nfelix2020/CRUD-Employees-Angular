@@ -1,11 +1,12 @@
 <div class="container mt-3">
 <h2>Liste des employées</h2>
+<a  routerLink="employee/add/0" class="btn btn-primary">Ajouter un Employé(e)</a>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Name</th>
+      <th scope="col">Nom</th>
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
     </tr>
@@ -17,6 +18,7 @@
       <td>{{employee.name}} </td>
       <td>{{employee.email}} </td>
       <td>{{employee.phone}} </td>
+      <td><a [routerLink]="['employee/edit', employee.id]">Modifier</a> </td>
     </tr>
 
   </tbody>
