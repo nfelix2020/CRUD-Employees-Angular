@@ -18,7 +18,8 @@
       <td>{{employee.name}} </td>
       <td>{{employee.email}} </td>
       <td>{{employee.phone}} </td>
-      <td><a [routerLink]="['employee/edit', employee.id]">Modifier</a> </td>
+      <td><a [routerLink]="['employee/edit', employee.id]"><button class="btn btn-warning">Modifier</button></a> </td>
+      <td><button (click)="onDelete(employee.id)" class="btn btn-danger">Supprimer </button></td>
     </tr>
 
   </tbody>

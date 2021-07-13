@@ -9,7 +9,7 @@ import { EmployeeService } from '../services/employee.service';
 })
 export class EmployeesComponent implements OnInit {
 
-  employees!: Employee[];
+  public employees?: Employee[];
 
   constructor(private employeeService: EmployeeService) {
 
@@ -18,5 +18,11 @@ export class EmployeesComponent implements OnInit {
   ngOnInit(): void {
     this.employees= this.employeeService.onGet(); //Calling the method from the service
   }
+
+
+  onDelete(id?: Number){
+    this.employeeService.onDelete(id);
+  }
+
 
 }

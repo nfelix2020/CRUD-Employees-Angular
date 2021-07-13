@@ -6,7 +6,7 @@ import { Employee } from '../models/employee.model';
 })
 export class EmployeeService {
 
-  employees: Employee[]=[
+  public employees: Employee[]=[
 
     {
       id:1,
@@ -35,7 +35,27 @@ export class EmployeeService {
 
   //functions to return the list of employees to the component
   onGet(){
-
     return this.employees;
   }
+
+  onAdd(employee: Employee){
+    this.employees.push(employee); //On ajoute un nveau employé sur la liste des autres employés
+  }
+
+
+  onGetEmployee(id: Number){
+    return this.employees.find(x=>x.id===id);  //Chercher l'employee dont l'ID est le meme que l'Id envoyé comme paramètre
+  }
+
+
+  onDelete(id?: Number){
+    //Find the employee First
+    let employee= this.employees.find(x => x.id ===id);
+    //then find the index of employee
+
+    let index= this.employees.indexOf(employee!, 0); //! : variable not nullable
+    this.employees.splice(index, 1);
+
+  }
+
 }

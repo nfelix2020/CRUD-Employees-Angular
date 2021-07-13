@@ -1,1 +1,27 @@
-<p>edit works!</p>
+<div class="container mt-5">
+  <h2> {{header}} </h2>
+
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+    <div class="form-group">
+      <label for="">Id</label>
+      <input type="text" class="form-control" [ngModel]="emp?.id" name="id" >
+    </div>
+    <div class="form-group">
+      <label for="">Nom</label>
+      <input type="text" class="form-control" [ngModel]="emp?.name" name="nom">
+    </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="text" class="form-control" [ngModel]="emp?.email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="">Phone</label>
+      <input type="text" class="form-control" [ngModel]="emp?.phone" name="phone">
+    </div>
+    <div class="form-group">
+     <button btn btn-primary>Enregistrer</button>
+    </div>
+
+
+  </form>
+</div>
